@@ -108,12 +108,12 @@ if prompt := st.chat_input(t["chat_placeholder"]):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    try:
+   try:
         client = genai.Client(api_key=clean_key)
         
         with st.chat_message("assistant"):
             response = client.models.generate_content(
-                model="gemini-1.5-flash",
+                model="gemini-2.0-flash",  # <--- MUST BE 'gemini-2.0-flash' OR 'models/gemini-2.0-flash'
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_INSTRUCTION,
