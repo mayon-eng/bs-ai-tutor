@@ -113,7 +113,7 @@ if prompt := st.chat_input(t["chat_placeholder"]):
         
         with st.chat_message("assistant"):
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-1.5-flash",
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_INSTRUCTION,
